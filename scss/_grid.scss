@@ -1,0 +1,93 @@
+@import 'variables';
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin-bottom: 2%;
+    
+}
+
+
+
+.col + .col{
+    margin-left:$gutter;
+}
+
+
+
+// par le biai d'un mixin
+@mixin offsetMixin($column, $column-w, $gutterParam) {
+
+    margin-left: ($column * $column-w)+(($column - 1)* $gutter);
+
+}
+
+
+// Génération automatique
+
+@for $i from 0 through $nb-columns - 1 {
+    .offset-xs#{$i}{
+        margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+    }
+}
+
+
+@for $i from 1 through $nb-columns{
+    .xs#{$i} {
+        flex-basis: ($i * $column-width)+(($i)* $gutter );
+
+    }
+}
+
+
+
+@media screen and (min-width:340px) and (max-width:620px) {
+
+    @for $i from 0 through $nb-columns - 1 {
+        .offset-s#{$i} {
+            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+        }
+    }
+    @for $i from 1 through $nb-columns {
+        .s#{$i} {
+            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
+            
+        }
+    }
+}
+
+
+@media screen and (min-width:620px) and (max-width:1024px) {
+
+    @for $i from 0 through $nb-columns - 1 {
+        .offset-m#{$i} {
+            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+        }
+    }
+
+    @for $i from 1 through $nb-columns {
+        .m#{$i} {
+            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
+
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+
+    @for $i from 0 through $nb-columns - 1 {
+        .offset-l#{$i} {
+            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+        }
+    }
+
+    @for $i from 1 through $nb-columns {
+        .l#{$i} {
+            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
+
+        }
+    }
+}

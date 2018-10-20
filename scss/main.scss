@@ -1,5 +1,11 @@
 @import 'header';
+@import 'grid';
 
+
+body{
+    font-family: 'Futura', sans-serif;
+
+}
 .banniere{
     @extend .header;
 }
@@ -9,7 +15,7 @@
     
 }
 
-.header-container img{
+h1 img{
     @extend .header-logo;
 }
 
