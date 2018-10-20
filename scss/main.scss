@@ -1,0 +1,19 @@
+@import 'header';
+
+.banniere{
+    @extend .header;
+}
+
+.header-container{
+    @extend .container;
+    
+}
+
+.header-container img{
+    @extend .header-logo;
+}
+
+.header-titre{
+    @extend .header-name;
+}
+
