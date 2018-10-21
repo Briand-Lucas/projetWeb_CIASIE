@@ -491,6 +491,7 @@ header .fa:hover {
   margin: 0;
   line-height: 25px;
   color: rgba(255, 100, 0, 0.925);
+  margin-top: 1%;
 }
 .nav-menu ul, .vertical-nav ul {
   margin: 0;
@@ -510,9 +511,37 @@ header .fa:hover {
 }
 
 /** LES ARTICLES */
+.article-title, .article-titre {
+  color: rgba(255, 100, 0, 0.925);
+  font-weight: 750;
+  font-size: 16px;
+}
+
+.article-author a, .article-auteur a {
+  color: black;
+  font-style: italic;
+  font-size: 13px;
+  margin-left: 2%;
+}
+
+.article-date a {
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+  font-size: 13px;
+  margin-left: 2%;
+}
+
+.article-content, .contenu-article {
+  margin: 2%;
+  text-align: justify;
+  font-size: 14px;
+}
+
 .rotation-gauche {
   transform: rotate(-1deg);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.425);
+  margin-top: 1%;
 }
 .rotation-gauche:hover {
   transform: rotate(0deg);
@@ -525,6 +554,7 @@ header .fa:hover {
 .rotation-droite {
   transform: rotate(1deg);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.425);
+  margin-top: 1%;
 }
 .rotation-droite:hover {
   transform: rotate(0deg);

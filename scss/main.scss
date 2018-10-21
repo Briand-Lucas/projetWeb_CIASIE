@@ -62,3 +62,15 @@ h1 img{
 .rotation-droite{
     @include rotate(1deg);
 }
+
+.article-titre{
+    @extend .article-title;
+}
+
+.article-auteur{
+    @extend .article-author;
+}
+
+.contenu-article{
+    @extend .article-content;
+}

@@ -2,6 +2,7 @@
 @mixin rotate($inclinaison){
     transform:rotate($inclinaison);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.425);
+    margin-top:1%;
  
     &:hover{
         transform: rotate(0deg);
@@ -11,4 +12,37 @@
     & img{
         width:100%;
     }
+}
+
+
+.article-title{
+    color: rgba(255, 100, 0, 0.925);
+    font-weight:750;
+    font-size:16px;
+}
+
+.article-author{  
+    & a{
+        color:black ;
+        font-style: italic;
+        font-size:13px;
+        margin-left:2%;
+    }
+}
+
+.article-date{
+
+    & a{
+        color:black;
+        text-decoration:none;
+        font-style: italic;
+        font-size:13px;
+        margin-left:2%;
+    }
+}
+
+.article-content{
+    margin:2%;
+    text-align: justify;
+    font-size:14px;
 }
