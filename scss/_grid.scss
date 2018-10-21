@@ -21,7 +21,7 @@
 // par le biai d'un mixin
 @mixin offsetMixin($column, $column-w, $gutterParam) {
 
-    margin-left: ($column * $column-w)+(($column - 1)* $gutter);
+    margin-left: ($column * $column-w)+(($column)* $gutter) !important;
 
 }
 
@@ -30,7 +30,7 @@
 
 @for $i from 0 through $nb-columns - 1 {
     .offset-xs#{$i}{
-        margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+        @include offsetMixin($i, $column-width, $gutter);
     }
 }
 
@@ -44,11 +44,11 @@
 
 
 
-@media screen and (min-width:340px) and (max-width:620px) {
+@media screen and (min-width:420px) and (max-width:640px) {
 
     @for $i from 0 through $nb-columns - 1 {
         .offset-s#{$i} {
-            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+            @include offsetMixin($i, $column-width, $gutter);
         }
     }
     @for $i from 1 through $nb-columns {
@@ -60,11 +60,11 @@
 }
 
 
-@media screen and (min-width:620px) and (max-width:1024px) {
+@media screen and (min-width:640px) and (max-width:800px) {
 
     @for $i from 0 through $nb-columns - 1 {
         .offset-m#{$i} {
-            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+            @include offsetMixin($i, $column-width, $gutter);
         }
     }
 
@@ -76,11 +76,11 @@
     }
 }
 
-@media screen and (min-width:1024px){
+@media screen and (min-width:800px){
 
     @for $i from 0 through $nb-columns - 1 {
         .offset-l#{$i} {
-            margin-left: ($i * $column-width)+(($i)* $gutter) !important;
+            @include offsetMixin($i, $column-width, $gutter);
         }
     }
 

@@ -1,11 +1,16 @@
-@import 'header';
 @import 'grid';
-
 
 body{
     font-family: 'Futura', sans-serif;
-
+    margin:0;
 }
+
+
+/** BANNIERE */ 
+
+@import 'header';
+
+
 .banniere{
     @extend .header;
 }
@@ -23,3 +28,37 @@ h1 img{
     @extend .header-name;
 }
 
+.networks-list{
+    @extend .header-nav;
+}
+
+
+/** MENU VERTICAL */
+
+@import 'menu';
+
+
+.sous-titre{
+    @extend .subtitle;
+}
+
+.vertical-nav {
+    @extend .nav-menu;
+}
+.vertical-nav h2{
+    @extend .nav-title;
+}
+
+
+
+/** LES ARTICLES */
+
+@import 'article';
+
+.rotation-gauche{
+    @include rotate(-1deg);
+}
+
+.rotation-droite{
+    @include rotate(1deg);
+}

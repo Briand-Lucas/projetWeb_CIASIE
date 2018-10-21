@@ -1,0 +1,31 @@
+@import 'variables';
+
+
+
+.nav-menu{
+    margin:0;
+    line-height: 25px;
+    color:rgba(255, 100, 0, 0.925);
+
+    & ul{
+        margin: 0;
+    
+
+
+        & li{
+            list-style-type: none;
+
+            & a{
+                text-decoration: none;
+                color:rgba(255, 100, 0, 0.925);
+                font-size:20px;
+            }
+        }
+
+    }
+}
+
+.nav-title{
+    font-size:1.2em;
+    font-weight: 900;
+}
