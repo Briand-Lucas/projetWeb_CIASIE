@@ -1,10 +1,10 @@
 /** Pour la grille */
 
 // Nombre de colonne
-$nb-columns: 12;
+$nb-columns: 120;
 
 // Taille de la goutière (séparation entre les colonnes)
-$gutter: 2%;
+$gutter: 0.5%;
 
 //Taille des colonnes calculée automatiquement
 $column-width: (100% - (($nb-columns - 1) * ($gutter))) / $nb-columns;
