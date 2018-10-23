@@ -1,93 +1,94 @@
-@import 'variables';
-
-
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-bottom: 2%;
-    
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 2%;
+    grid-row-gap: 2%;
+    padding-left:2%;
+    padding-right:2%;
 }
 
 
 
-.col + .col{
-    margin-left:$gutter;
-    box-sizing: border-box;
+.col:nth-child(1){
+    grid-column: span 2;
 }
 
-
-
-// par le biai d'un mixin
-@mixin offsetMixin($column, $column-w, $gutterParam) {
-
-    margin-left: ($column * $column-w)+(($column)* $gutter) !important;
-
+.col:nth-child(2) {
+    grid-column: span 2;
 }
 
-
-// Génération automatique
-
-@for $i from 0 through $nb-columns - 1 {
-    .offset-xs#{$i}{
-        @include offsetMixin($i, $column-width, $gutter);
-    }
+.col:nth-child(3) {
+    grid-column: span 2;
 }
 
-
-@for $i from 1 through $nb-columns{
-    .xs#{$i} {
-        flex-basis: ($i * $column-width)+(($i)* $gutter );
-
-    }
+.col:nth-child(4) {
+    grid-column: span 2;
 }
 
+.col:nth-child(5) {
+    grid-column: span 1;
+}
+
+.col:nth-child(6) {
+    grid-column: span 1;
+}
+
+.col:nth-child(7) {
+    grid-column: span 1;
+}
+
+.col:nth-child(8) {
+    grid-column: span 2;
+}
+
+.col:nth-child(9) {
+    grid-column: span 2;
+}
+
+.col:nth-child(10) {
+    grid-column: span 2;
+}
+
+.col:nth-child(11) {
+    grid-column: span 2;
+}
 
 
 @media screen and (min-width:420px) and (max-width:640px) {
 
-    @for $i from 0 through $nb-columns - 1 {
-        .offset-s#{$i} {
-            @include offsetMixin($i, $column-width, $gutter);
-        }
+    .col:nth-child(1) {
+        grid-column: span 1;
     }
-    @for $i from 1 through $nb-columns {
-        .s#{$i} {
-            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
-            
-        }
+    .row{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 
 @media screen and (min-width:640px) and (max-width:800px) {
-
-    @for $i from 0 through $nb-columns - 1 {
-        .offset-m#{$i} {
-            @include offsetMixin($i, $column-width, $gutter);
-        }
+    .col:nth-child(1) {
+        grid-column: span 1;
     }
-
-    @for $i from 1 through $nb-columns {
-        .m#{$i} {
-            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
-
-        }
+    .row {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media screen and (min-width:800px){
-
-    @for $i from 0 through $nb-columns - 1 {
-        .offset-l#{$i} {
-            @include offsetMixin($i, $column-width, $gutter);
-        }
+@media screen and (min-width:800px) and (max-width:1024px){
+    .col:nth-child(1) {
+        grid-column: span 1;
     }
+    .row {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
 
-    @for $i from 1 through $nb-columns {
-        .l#{$i} {
-            flex-basis: ($i * $column-width)+(($i - 1)* $gutter);
-
-        }
+@media screen and (min-width:1024px){
+    .col:nth-child(1) {
+        grid-column: span 1;
+    }
+    .row {
+        grid-template-columns: repeat(6, 1fr);
     }
 }

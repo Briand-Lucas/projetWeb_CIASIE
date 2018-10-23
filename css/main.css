@@ -1,12 +1,102 @@
-/** Pour la grille */
 .row {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2%;
+  grid-row-gap: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.col:nth-child(1) {
+  grid-column: span 2;
+}
+
+.col:nth-child(2) {
+  grid-column: span 2;
+}
+
+.col:nth-child(3) {
+  grid-column: span 2;
+}
+
+.col:nth-child(4) {
+  grid-column: span 2;
+}
+
+.col:nth-child(5) {
+  grid-column: span 1;
+}
+
+.col:nth-child(6) {
+  grid-column: span 1;
+}
+
+.col:nth-child(7) {
+  grid-column: span 1;
+}
+
+.col:nth-child(8) {
+  grid-column: span 2;
+}
+
+.col:nth-child(9) {
+  grid-column: span 2;
+}
+
+.col:nth-child(10) {
+  grid-column: span 2;
+}
+
+.col:nth-child(11) {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 420px) and (max-width: 640px) {
+  .col:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 800px) {
+  .col:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  .col:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .col:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .row {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+/** Pour la grille */
+.flexrow, .flex-nav-row {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   margin-bottom: 2%;
 }
 
-.col + .col {
+.flexcol + .flexcol, .flex-nav-col + .flexcol, .flexcol + .flex-nav-col, .flex-nav-col + .flex-nav-col {
   margin-left: 0.5%;
   box-sizing: border-box;
 }
@@ -3859,6 +3949,7 @@ body {
   margin: 0;
 }
 
+/** FLEX NAV HEADER **/
 /** BANNIERE */
 .header, .banniere {
   width: 100%;
@@ -3944,7 +4035,6 @@ header .fa:hover {
   }
 }
 /** MENU VERTICAL */
-/** Pour la grille */
 .nav-menu, .vertical-nav {
   margin: 0;
   line-height: 25px;
