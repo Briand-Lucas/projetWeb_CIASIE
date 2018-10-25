@@ -1,6 +1,5 @@
 .row {
   display: grid;
-  grid-auto-flow: row dense;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2%;
   grid-row-gap: 2%;
@@ -9,7 +8,7 @@
 }
 
 .col:nth-child(1) {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .col:nth-child(2) {
@@ -52,38 +51,23 @@
   grid-column: span 2;
 }
 
-@media screen and (min-width: 420px) and (max-width: 640px) {
-  .col:nth-child(1) {
-    grid-column: span 1;
-  }
-
+@media screen and (min-width: 420px) {
   .row {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row dense;
   }
 }
-@media screen and (min-width: 640px) and (max-width: 800px) {
-  .col:nth-child(1) {
-    grid-column: span 1;
-  }
-
+@media screen and (min-width: 640px) {
   .row {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1024px) {
-  .col:nth-child(1) {
-    grid-column: span 1;
-  }
-
+@media screen and (min-width: 800px) {
   .row {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 @media screen and (min-width: 1024px) {
-  .col:nth-child(1) {
-    grid-column: span 1;
-  }
-
   .row {
     grid-template-columns: repeat(6, 1fr);
   }
